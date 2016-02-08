@@ -10,5 +10,6 @@ app.get('/wines/:id', function(req, res) {
     res.send({id:req.params.id, name: "The Name", description: "description"});
 });
  
-app.listen(process.env.PORT || 3000);
-console.log('Listening on port  ' + listener.address().port + "...");
+var listener = app.listen(process.env.PORT || 3000, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+});
